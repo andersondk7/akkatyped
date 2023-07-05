@@ -18,7 +18,8 @@ import scala.concurrent.duration.DurationInt
   *
   */
 
-class ArchitectureDemo extends AnyFunSpec, CallHelper[Main.Message], Matchers {
+class ArchitectureDemo extends AnyFunSpec, CallHelper, Matchers {
+  type M = Main.Message
 
   private val logger = Logger(getClass.getName)
   implicit val delay: FiniteDuration = 500.millis

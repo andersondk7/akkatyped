@@ -17,7 +17,8 @@ import scala.concurrent.duration.DurationInt
  *
  */
 
-class SupervisorDemo extends AnyFunSpec, CallHelper[Supervisor.Message], Matchers {
+class SupervisorDemo extends AnyFunSpec, CallHelper, Matchers {
+  type M = Supervisor.Message
 
   val logger = Logger(getClass.getName)
   implicit val delay: FiniteDuration = 500.millis
