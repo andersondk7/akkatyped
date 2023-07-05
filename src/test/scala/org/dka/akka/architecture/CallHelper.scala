@@ -4,7 +4,7 @@ import akka.actor.typed.ActorSystem
 
 import scala.concurrent.duration.FiniteDuration
 
-final class  CallHelper[T] {
+trait CallHelper[T] {
   def call(message: T)
                   (implicit system: ActorSystem[T], delay: FiniteDuration): Unit = {
     system ! message
